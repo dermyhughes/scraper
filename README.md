@@ -11,3 +11,4 @@ Simply replace url with the page you wish to scrape and it will scrape the `src`
 const url = 'http://unsplash.com'; // URL you want to scrape
 ```
 
+By default, images will be downloaded to `download` folder in order of appearance in DOM.
