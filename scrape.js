@@ -17,19 +17,15 @@ request(url, (error, response, html) => {
             if (item !== undefined) {
                 writeStream.write(item + '\n'); // Writes to new line in csv
             }
-            //TO DO Add Downloader
-
+            // Image Downloader
             const dir = 'download'; // Folder where images are downloaded
-
             const options = {
                 url: item,
-                dest: `./${dir}/${file}.jpg`                  // Save to /path/to/dest/image.jpg
+                dest: `./${dir}/${file}.jpg`
             }
-
             if (!fs.existsSync(dir)) { // Checks if folder exists and if not, then creates it
                 fs.mkdirSync(dir);
             }
-
             download.image(options)
                 .then(({ filename, image }) => {
                     console.log('File saved to', filename)
